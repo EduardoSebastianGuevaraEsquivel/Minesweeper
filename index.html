@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="Css/styles.css">
+</head>
+<body oncontextmenu="return false">
+    <br>
+    <span id="juego-nuevo" onclick="nuevoJuego()">Juego Nuevo</span>
+    <span id="minas">000</span>
+    <span id="Ajustes" onclick="mostrarAjustes()">Ajustes <i class="fas fa-cog"></i></span>
+    <table cellspacing="0" cellpadding="0" id="tablero"></table>
+
+    <div id="modal-ajustes" class="modal">
+        <div class="modal-content">
+
+            <span class="cerrar" onclick="cerrarAjustes()">×</span>
+            <h2>Ajustes del Juego</h2>
+            <label for="dificultad">Selecciona la dificultad:</label>
+
+            <select id="dificultad" onchange="aplicarDificultad()">
+                <option value="ajustes-personalizados">Personalizado</option>
+                <option value="facil">Facil (5x5, 5 minas)</option>
+                <option value="medio">Medio (10x10, 15 minas)</option>
+                <option value="dificil">Dificil (15x15, 30 minas)</option>
+                <option value="muyDificil">Muy Dificil (20x20, 50 minas)</option>
+                <option value="hardcore">Hardcore (25x25, 100 minas)</option>
+                <option value="leyenda">Leyenda (30x30, 150 minas)</option>
+
+            </select>
+
+            <div id="ajustes-personalizados">
+                <label for="filas">Filas:</label>
+                <input type="number" id="filas" min="5" value="10">
+                <label for="columnas">Columnas:</label>
+                <input type="number" id="columnas" min="5" value="10">
+                <label for="minas-input">Minas:</label>
+                <input type="number" id="minas-input" min="1" value="10">
+            </div>
+
+            <button onclick="guardarAjustes()">Guardar</button>
+        </div>
+    </div>
+
+    <script src="Js/script.js"></script>
+</body>
+</html>
+
+
